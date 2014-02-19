@@ -11,3 +11,10 @@ function Person(first, last, age, weight, height, friends) {
 	this.friends = friends || [];
 };
 
+Person.prototype.fullName = function() {
+		return this.first_name + " " + this.last_name;
+};
+
+Person.prototype.weightInStone = function() {
+	return (this.weight / 6.35);
+};
