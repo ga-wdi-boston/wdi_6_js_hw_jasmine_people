@@ -34,4 +34,15 @@ describe("Person", function () {
       expect(jord.height).toEqual(150);
     });
   });
+
+  describe("common behavior", function(){
+
+    beforeEach(function() {
+      person = new Person("Jordan", "Morano");
+    });
+
+    it("#fullName", function(){
+      expect(person.fullName()).toEqual("Jordan Morano");
+    });
+  });
 });

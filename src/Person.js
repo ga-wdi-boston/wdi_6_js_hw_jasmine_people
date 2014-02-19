@@ -21,3 +21,10 @@ var Person = function (firstName, lastName, options) {
   }
   this.friends = []
 };
+
+// Common behavior inside a prototype
+Person.prototype = {
+  fullName    : function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
