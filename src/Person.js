@@ -4,19 +4,13 @@ var Person = function (firstName, lastName, options) {
   }
   this.firstName = firstName;
   this.lastName = lastName;
-  this.age = Math.floor(Math.random() * (46 - 24 + 1) + 24);
-  this.weight = Math.floor(Math.random() * (100 - 60 + 1) + 60);
-  this.height = Math.floor(Math.random() * (200 - 150 + 1) + 150);
+  this.age = Math.floor(Math.random() * (45 - 24 + 1) + 24);
+  this.weight = Math.floor(Math.random() * (99 - 60 + 1) + 60);
+  this.height = Math.floor(Math.random() * (199 - 150 + 1) + 150);
   // set default attributes
   if(options !== undefined){
-    if(options.age !== undefined){
-      this.age = options.age;
-    }
-    if(options.weight !== undefined){
-      this.weight = options.weight;
-    }
-    if(options.height !== undefined){
-      this.height = options.height;
+    for (var p in options) {
+      this[p] = options[p];
     }
   }
   this.friends = []
