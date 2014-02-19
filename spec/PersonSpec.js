@@ -22,5 +22,16 @@ describe("Person", function () {
       expect(person.height).toBeGreaterThan(150);
       expect(person.friends instanceof Array).toBeTruthy();
     });
+
+    it("lets you use an options object to set optional properties", function(){
+      var jord, options;
+      options = {
+        age     : 31,
+        height  : 150
+      };
+      jord = new Person("Jord", "Mor", options)
+      expect(jord.age).toEqual(31);
+      expect(jord.height).toEqual(150);
+    });
   });
 });

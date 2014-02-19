@@ -4,14 +4,20 @@ var Person = function (firstName, lastName, options) {
   }
   this.firstName = firstName;
   this.lastName = lastName;
-  // set default attributes
   this.age = Math.floor(Math.random() * (46 - 24 + 1) + 24);
   this.weight = Math.floor(Math.random() * (100 - 60 + 1) + 60);
   this.height = Math.floor(Math.random() * (200 - 150 + 1) + 150);
+  // set default attributes
+  if(options !== undefined){
+    if(options.age !== undefined){
+      this.age = options.age;
+    }
+    if(options.weight !== undefined){
+      this.weight = options.weight;
+    }
+    if(options.height !== undefined){
+      this.height = options.height;
+    }
+  }
   this.friends = []
-  // if ( options !== undefined ) {
-  //   for ( prop in options ) {
-  //     options.prop
-  //   }
-  // }
 };
