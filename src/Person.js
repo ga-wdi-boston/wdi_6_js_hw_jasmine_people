@@ -18,3 +18,16 @@ Person.prototype.fullName = function() {
 Person.prototype.weightInStone = function() {
 	return (this.weight / 6.35);
 };
+
+Person.prototype.addFriend = function(new_person) {
+	return this.friends.push(new_person);
+};
+
+Person.prototype.removeFriend = function(name_string) {
+	for (i = 0, length = this.friends.length; i < length; i = i + 1) {
+		if (this.friends[i].first_name === name_string){
+			delete this.friends[i];
+		};
+		return this.friends;
+	};
+};

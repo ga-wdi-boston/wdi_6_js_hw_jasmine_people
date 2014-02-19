@@ -1,5 +1,5 @@
 describe('Person', function(){
-	var person, invalid_person;
+	var person, person2, person3, invalid_person;
 	beforeEach(function(){
 		person = new Person("Praggya", "Barretto");
 		invalid_person = new Person();
@@ -27,8 +27,21 @@ describe('Person', function(){
 	it('has a function weightInStone that converts a persons weight to stone', function(){
 		person.weight = 100;
 		person.weightInStone();
-		expect(person.weightInStone()).toBeCloseTo(15.75, 0);
-
+		expect(person.weightInStone()).toBeCloseTo(15.75, 1);
 	});
 
+	it('adds a new person to the friends list', function(){
+		person2 = new Person("Mike", "Stone");
+		person3 = new Person("Another", "Person");
+		person.addFriend(person2);
+		expect(person.friends).toContain(person2);
+		expect(person.friends).not.toContain(person3);
+	});
+
+	it ('removes a person from the friends collection by name', function() {
+		person.addFriend(person2);
+		expect(person.friends).toContain(person2);
+		person.removeFriend(person2.first_name);
+		expect(person.friends).not.toContain(person2);
+	});
 });
