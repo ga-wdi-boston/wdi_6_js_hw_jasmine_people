@@ -20,5 +20,8 @@ var Person = function (firstName, lastName, options) {
 Person.prototype = {
   fullName    : function() {
     return this.firstName + " " + this.lastName;
+  },
+  weightInStone: function() {
+    return parseFloat((this.weight / 6.35029).toFixed(4));
   }
 }

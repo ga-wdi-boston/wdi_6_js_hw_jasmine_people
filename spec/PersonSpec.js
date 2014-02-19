@@ -36,13 +36,22 @@ describe("Person", function () {
   });
 
   describe("common behavior", function(){
-
+    var person, options;
+    options = {
+      age    : 31,
+      height : 160,
+      weight : 70
+    };
     beforeEach(function() {
-      person = new Person("Jordan", "Morano");
+      person = new Person("Jordan", "Morano", options);
     });
 
     it("#fullName", function(){
       expect(person.fullName()).toEqual("Jordan Morano");
+    });
+
+    it("#weightInStone", function() {
+      expect(person.weightInStone()).toEqual(11.0231);
     });
   });
 });
