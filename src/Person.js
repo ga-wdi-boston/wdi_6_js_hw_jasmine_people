@@ -26,5 +26,14 @@ Person.prototype = {
   },
   addFriend     : function(person) {
     this.friends.push(person);
+  },
+  removeFriend  : function(firstName) {
+    var newFriends = [];
+    this.friends.filter(function(element){
+      if (element.firstName !== firstName ) {
+        newFriends.push(element);
+      }
+    });
+    this.friends = newFriends;
   }
 }
