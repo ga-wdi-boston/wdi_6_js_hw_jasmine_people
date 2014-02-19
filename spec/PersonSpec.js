@@ -36,7 +36,7 @@ describe("Person", function () {
   });
 
   describe("common behavior", function(){
-    var person, options;
+    var person, options, person_2, person_3;
     options = {
       age    : 31,
       height : 160,
@@ -45,7 +45,9 @@ describe("Person", function () {
     beforeEach(function() {
       person = new Person("Jordan", "Morano", options);
       person_2 = new Person("Yiyang", "Song");
+      person_3 = new Person("Dess", "Yeager");
       person.addFriend(person_2);
+      person.addFriend(person_3);
     });
 
     it("#fullName", function(){
@@ -63,6 +65,10 @@ describe("Person", function () {
     it("#removeFriend", function() {
       person.removeFriend("Yiyang");
       expect(person.friends).not.toContain(person_2);
+    });
+
+    it("#greetPeople defaults to friends", function(){
+      expect(person.greetPeople()).toEqual("Hi Yiyang. Hi Dess. ");
     });
   });
 });

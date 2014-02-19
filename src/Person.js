@@ -35,5 +35,14 @@ Person.prototype = {
       }
     });
     this.friends = newFriends;
+  },
+  greetPeople   : function(options) {
+    var greeting = "";
+    if ( options === undefined ) {
+      this.friends.forEach(function(el) {
+        greeting = greeting + "Hi " + el.firstName + ". ";
+      });
+    }
+    return greeting;
   }
 }
