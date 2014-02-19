@@ -31,3 +31,13 @@ Person.prototype.removeFriend = function(name_string) {
 		return this.friends;
 	};
 };
+
+Person.prototype.greetPeople = function(options) {
+	var people_array = this.friends|| options.people ;
+	var greeting = "Hi"|| options.greeting ;
+	if (people_array.length > 0) {
+		for (element in people_array) {
+			console.log(greeting + " " + people_array[element].fullName());
+		}
+	};
+};

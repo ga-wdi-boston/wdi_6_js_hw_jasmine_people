@@ -44,4 +44,16 @@ describe('Person', function(){
 		person.removeFriend(person2.first_name);
 		expect(person.friends).not.toContain(person2);
 	});
+
+	it ('should greet members of friends list with default greeting', function() {
+		person.addFriend(person2);
+		expect(person.friends).toContain(person2);
+		person.greetPeople();
+		expect(person.greetPeople()).toEqual(alert("Hi " + person2.fullName()));
+	});
+
+	it ('should allow for custom greeting to a set group of people', function() {
+		expect(person.greetPeople({greeting: "Hello", people: [person2, person3]})).toEqual(alert("Hello" + " " + person3.fullName()));
+	});
+
 });
