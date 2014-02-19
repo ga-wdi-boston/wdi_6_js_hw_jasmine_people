@@ -44,6 +44,8 @@ describe("Person", function () {
     };
     beforeEach(function() {
       person = new Person("Jordan", "Morano", options);
+      person_2 = new Person("Yiyang", "Song");
+      person.addFriend(person_2);
     });
 
     it("#fullName", function(){
@@ -52,6 +54,15 @@ describe("Person", function () {
 
     it("#weightInStone", function() {
       expect(person.weightInStone()).toEqual(11.0231);
+    });
+
+    it("#addFriend", function() {
+      expect(person.friends).toContain(person_2);
+    });
+
+    it("#removeFriend", function() {
+      person.removeFriend("Yiyang");
+      expect(person.friends).not.toContain(person_2);
     });
   });
 });

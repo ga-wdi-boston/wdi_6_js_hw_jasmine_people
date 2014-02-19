@@ -18,10 +18,13 @@ var Person = function (firstName, lastName, options) {
 
 // Common behavior inside a prototype
 Person.prototype = {
-  fullName    : function() {
+  fullName      : function() {
     return this.firstName + " " + this.lastName;
   },
-  weightInStone: function() {
+  weightInStone : function() {
     return parseFloat((this.weight / 6.35029).toFixed(4));
+  },
+  addFriend     : function(person) {
+    this.friends.push(person);
   }
 }
