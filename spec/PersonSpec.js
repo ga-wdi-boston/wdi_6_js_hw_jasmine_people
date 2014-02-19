@@ -36,7 +36,7 @@ describe("Person", function () {
   });
 
   describe("common behavior", function(){
-    var person, options, person_2, person_3;
+    var person, options, person_2, person_3, person_4;
     options = {
       age    : 31,
       height : 160,
@@ -46,6 +46,7 @@ describe("Person", function () {
       person = new Person("Jordan", "Morano", options);
       person_2 = new Person("Yiyang", "Song");
       person_3 = new Person("Dess", "Yeager");
+      person_4 = new Person("Rosie", "Yeager");
       person.addFriend(person_2);
       person.addFriend(person_3);
     });
@@ -67,8 +68,16 @@ describe("Person", function () {
       expect(person.friends).not.toContain(person_2);
     });
 
-    it("#greetPeople defaults to friends", function(){
-      expect(person.greetPeople()).toEqual("Hi Yiyang. Hi Dess. ");
+    it("#greetPeople defaults to friends and hi", function(){
+      expect(person.greetPeople()).toEqual("Hi Yiyang.Hi Dess.");
+    });
+
+    it("#greetPeople takes options of people and msg", function(){
+      var options = {
+        people    : [person_2, person_4],
+        greeting  : "Wazzup!"
+      }
+      expect(person.greetPeople(options)).toEqual(" Wazzup! Yiyang. Wazzup! Rosie.")
     });
   });
 });

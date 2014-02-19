@@ -40,7 +40,11 @@ Person.prototype = {
     var greeting = "";
     if ( options === undefined ) {
       this.friends.forEach(function(el) {
-        greeting = greeting + "Hi " + el.firstName + ". ";
+        greeting = greeting + "Hi " + el.firstName + ".";
+      });
+    } else{
+      options.people.forEach(function(el) {
+        greeting = greeting + " " + options.greeting + " "+ el.firstName + ".";
       });
     }
     return greeting;
