@@ -32,7 +32,7 @@ Person.prototype = {
     }
     else{
       for(var i = 0; i < array.length; i++){
-        return 'Hi, ' + array[i].fullName;
+        return 'Hi, ' + array[i].fullName();
       }
     }
   }
