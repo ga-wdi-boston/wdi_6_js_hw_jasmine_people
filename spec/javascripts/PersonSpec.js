@@ -28,6 +28,38 @@ describe('Person', function() {
     expect(this.person.height).toBe(182);
     expect(this.person.friends.length).toBe(4);
   });
+
+  describe("#fullName", function(){
+    it("displays persons full name", function() {
+
+
+    });
+  });
+
+  xdescribe("#weightInStone", function(){
+    it("", function() {
+
+    });
+  });
+
+  xdescribe("#addFriend", function(){
+    it("", function() {
+
+    });
+  });
+
+  xdescribe("#removeFriend", function(){
+    it("", function() {
+
+    });
+  });
+
+  xdescribe("#greetPeople", function(){
+    it("", function() {
+
+    });
+  });
+
 });
 
 
