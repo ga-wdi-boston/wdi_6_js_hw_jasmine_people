@@ -6,3 +6,9 @@ var Person = function(firstName, lastName, age, weight, height, friends){
   this.height = height || Math.floor(Math.random() * 50 + 150);
   this.friends = friends || [];
 };
+
+Person.prototype = {
+  fullName: function(){
+    return this.firstName + ' ' + this.lastName;
+  }
+};

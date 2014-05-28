@@ -31,8 +31,7 @@ describe('Person', function() {
 
   describe("#fullName", function(){
     it("displays persons full name", function() {
-
-
+      expect(this.person.fullName()).toBe('Mike Talley');
     });
   });
 
