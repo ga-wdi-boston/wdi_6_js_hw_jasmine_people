@@ -13,5 +13,8 @@ Person.prototype = {
   },
   weightInStone: function(){
     return this.weight / 6.35;
+  },
+  addFriend: function(person){
+    this.friends.push(person);
   }
 };

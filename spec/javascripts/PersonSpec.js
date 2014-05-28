@@ -17,7 +17,7 @@ describe('Person', function() {
 
 describe('Person', function() {
   beforeEach(function() {
-    this.person = new Person('Mike', 'Talley', 34, 86, 182, ['Ethan', 'Lisa', 'George', 'Amanda']);
+    mike = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
   });
 
   it('accepts values as parameters', function() {
@@ -26,7 +26,7 @@ describe('Person', function() {
     expect(this.person.age).toBe(34);
     expect(this.person.weight).toBe(86);
     expect(this.person.height).toBe(182);
-    expect(this.person.friends.length).toBe(4);
+    expect(this.person.friends.length).toBe(0);
   });
 
   describe("#fullName", function(){
@@ -36,14 +36,16 @@ describe('Person', function() {
   });
 
   describe("#weightInStone", function(){
-    it("", function() {
+    it("displays weight in stone", function() {
       expect(this.person.weightInStone()).toBeCloseTo(13.54);
     });
   });
 
-  xdescribe("#addFriend", function(){
-    it("", function() {
+  describe("#addFriend", function(person){
+    it("adds a friend to friends array", function() {
+      this.person.addFriend(mike);
 
+      expect(this.person.friends.length).toBe(1);
     });
   });
 
