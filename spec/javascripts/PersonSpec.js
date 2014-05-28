@@ -68,6 +68,9 @@ describe('Person', function() {
     it("greets people", function() {
       expect(mike.greetPeople([joe, bob])).toContain('Hi');
       expect(bob.greetPeople()).toContain('Hi');
+      expect(function() {
+        joe.greetPeople();
+      }).toThrowError('No people/friends to greet!');
     });
   });
 
