@@ -15,12 +15,24 @@ Person.prototype = {
     return this.weight / 6.35;
   },
   addFriend: function(person){
-    this.friends.push(person);
+    return this.friends.push(person);
   },
   removeFriend: function(removeName){
     for(var i = 0; i < this.friends.length; i++){
       if(this.friends[i].fullName === removeName){
-        this.friends.splice(i, 1);
+        return this.friends.splice(i, 1);
+      }
+    }
+  },
+  greetPeople: function(people){
+    var array = people || this.friends;
+
+    if(array.length === 0){
+      throw new Error('No people/friends to greet!');
+    }
+    else{
+      for(var i = 0; i < array.length; i++){
+        return 'Hi, ' + array[i].fullName;
       }
     }
   }

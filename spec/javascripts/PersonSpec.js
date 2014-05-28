@@ -18,6 +18,8 @@ describe('Person', function() {
 describe('Person', function() {
   beforeEach(function() {
     mike = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
+    joe = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
+    bob = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
   });
 
   it('accepts values as parameters', function() {
@@ -57,12 +59,11 @@ describe('Person', function() {
     });
   });
 
-  xdescribe("#greetPeople", function(people){
+  describe("#greetPeople", function(people){
     it("greets people", function() {
-      console.log = jasmine.createSpy("log");
-      this.person.greetPeople(people);
+      this.person.greetPeople([joe, bob]);
 
-      expect(this.person)
+      expect(this.person.greetPeople([joe, bob])).toContain('Hi');
     });
   });
 
