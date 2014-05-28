@@ -60,6 +60,7 @@ describe('Person', function() {
 
 describe('Person', function() {
   beforeEach(function() {
+    mike = new Person('Mike', 'Talley', 34, 86, 182, []);
     joe = new Person('Mike', 'Talley', 34, 86, 182, []);
     bob = new Person('Mike', 'Talley', 34, 86, 182, [mike, joe]);
   });
