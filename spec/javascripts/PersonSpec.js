@@ -49,9 +49,11 @@ describe('Person', function() {
     });
   });
 
-  xdescribe("#removeFriend", function(){
-    it("", function() {
+  describe("#removeFriend", function(person){
+    it("removes a selected friend from friends array", function() {
+      this.person.removeFriend(mike);
 
+      expect(this.person.friends.length).toBe(0);
     });
   });
 

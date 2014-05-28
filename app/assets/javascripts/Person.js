@@ -16,5 +16,8 @@ Person.prototype = {
   },
   addFriend: function(person){
     this.friends.push(person);
+  },
+  removeFriend: function(person){
+    this.friends.splice(this.friends.indexOf(mike), 1);
   }
 };
