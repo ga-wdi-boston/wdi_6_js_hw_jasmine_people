@@ -18,8 +18,6 @@ describe('Person', function() {
 describe('Person', function() {
   beforeEach(function() {
     mike = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
-    joe = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
-    bob = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
   });
 
   it('accepts values as parameters', function() {
@@ -58,12 +56,18 @@ describe('Person', function() {
       expect(this.person.friends.length).toBe(0);
     });
   });
+});
+
+describe('Person', function() {
+  beforeEach(function() {
+    joe = new Person('Mike', 'Talley', 34, 86, 182, []);
+    bob = new Person('Mike', 'Talley', 34, 86, 182, [mike, joe]);
+  });
 
   describe("#greetPeople", function(people){
     it("greets people", function() {
-      this.person.greetPeople([joe, bob]);
-
-      expect(this.person.greetPeople([joe, bob])).toContain('Hi');
+      expect(mike.greetPeople([joe, bob])).toContain('Hi');
+      expect(bob.greetPeople()).toContain('Hi');
     });
   });
 
