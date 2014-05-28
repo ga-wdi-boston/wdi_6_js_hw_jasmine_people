@@ -31,4 +31,12 @@ describe("Player", function() {
       expect(this.player.weight).toBe(80);
     });
   });
+
+  describe("#height", function(){
+    it("person has a height between 150 and 200 cm", function(){
+
+      expect(this.player.height).toBeGreaterThan(149);
+      expect(this.player.height).toBeLessThan(201);
+    });
+  });
 });
