@@ -40,10 +40,17 @@ describe("Player", function() {
     });
   });
 
-  describe("#friends", function(){
-    it("person has an array of friends", function(){
+  // describe("#friends", function(){
+  //   it("person has an array of friends", function(){
 
-      expect(this.player.friends).toBeEmptyArray();
+  //     expect(this.player.friends).toBeEmptyArray();
+  //   });
+  // });
+
+  describe("#fullName", function(){
+    it("returns first and last name", function(){
+
+      expect(this.player.fullName(this.player.firstName, this.player.lastName)).toBe("Ethan Gould");
     });
   });
 });
