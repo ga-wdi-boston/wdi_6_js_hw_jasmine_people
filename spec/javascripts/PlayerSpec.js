@@ -39,4 +39,11 @@ describe("Player", function() {
       expect(this.player.height).toBeLessThan(201);
     });
   });
+
+  describe("#friends", function(){
+    it("person has an array of friends", function(){
+
+      expect(this.player.friends).toBeEmptyArray();
+    });
+  });
 });
