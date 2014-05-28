@@ -6,5 +6,5 @@ var Player = function(firstName, lastName, age, weight, height, friends) {
   this.height = Math.floor(Math.random() * 50 + 150);
   this.friends = [];
   this.fullName = function(firstName, lastName){ return firstName + ' ' + lastName;};
-  this.weightInStone = function(weight){ return weight / 14;};
+  this.weightInStone = function(weight){ return Math.round(weight / 14);};
 };

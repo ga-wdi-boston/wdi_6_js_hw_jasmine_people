@@ -53,4 +53,11 @@ describe("Player", function() {
       expect(this.player.fullName(this.player.firstName, this.player.lastName)).toBe("Ethan Gould");
     });
   });
+
+  describe("#weightInStone", function(){
+    it("returns persons weight in stone", function(){
+
+      expect(this.player.weightInStone(this.player.weight)).toBe(6);
+    });
+  });
 });
