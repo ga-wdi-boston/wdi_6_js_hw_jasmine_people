@@ -8,8 +8,8 @@ describe('Person', function() {
     expect(this.person.lastName).toBe('Talley');
     expect(this.person.age).toBe(30);
     expect(this.person.weight).toBe(80);
-    expect(this.person.height).toBeLessThan(200);
-    expect(this.person.height).toBeGreaterThan(150);
+    expect(this.person.height).toBeLessThan(201);
+    expect(this.person.height).toBeGreaterThan(149);
     expect(this.person.friends.length).toBe(0);
   });
 
@@ -49,17 +49,20 @@ describe('Person', function() {
     });
   });
 
-  describe("#removeFriend", function(person){
+  describe("#removeFriend", function(removeName){
     it("removes a selected friend from friends array", function() {
-      this.person.removeFriend(mike);
+      this.person.removeFriend('Mike Talley');
 
       expect(this.person.friends.length).toBe(0);
     });
   });
 
-  xdescribe("#greetPeople", function(){
-    it("", function() {
+  xdescribe("#greetPeople", function(people){
+    it("greets people", function() {
+      console.log = jasmine.createSpy("log");
+      this.person.greetPeople(people);
 
+      expect(this.person)
     });
   });
 

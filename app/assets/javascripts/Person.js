@@ -17,7 +17,11 @@ Person.prototype = {
   addFriend: function(person){
     this.friends.push(person);
   },
-  removeFriend: function(person){
-    this.friends.splice(this.friends.indexOf(mike), 1);
+  removeFriend: function(removeName){
+    for(var i = 0; i < this.friends.length; i++){
+      if(this.friends[i].fullName === removeName){
+        this.friends.splice(i, 1);
+      }
+    }
   }
 };
