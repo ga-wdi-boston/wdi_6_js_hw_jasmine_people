@@ -35,9 +35,9 @@ describe('Person', function() {
     });
   });
 
-  xdescribe("#weightInStone", function(){
+  describe("#weightInStone", function(){
     it("", function() {
-
+      expect(this.person.weightInStone()).toBeCloseTo(13.54);
     });
   });
 
