@@ -24,4 +24,11 @@ describe("Player", function() {
       expect(this.player.age).toBe(30);
     });
   });
+
+  describe("#weight", function(){
+    it("person has a weight, defaults to 80", function(){
+
+      expect(this.player.weight).toBe(80);
+    });
+  });
 });
