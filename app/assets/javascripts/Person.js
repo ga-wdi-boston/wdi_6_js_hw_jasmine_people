@@ -12,3 +12,9 @@ Person.prototype = {
   stoneWeight: function(){ return this.weight / 6.35; }
 };
 
+
+  // var friend = new Person("stevie", "dog");
+  // it("adds a friend", function(){
+  //   this.person.friends.push(friend);
+
+    expect(this.person.friends[friends.length - 1].toBe(friend);
