@@ -9,7 +9,8 @@ var Person = function(firstName, lastName, age, weight, height, friends){
 
 Person.prototype = {
   fullName: function(){ return this.firstName + " " + this.lastName; },
-  stoneWeight: function(){ return this.weight / 6.35; }
+  stoneWeight: function(){ return this.weight / 6.35; },
+  addFriend: function(friend){ this.friends.push(friend); }
 };
 
 
@@ -17,4 +18,4 @@ Person.prototype = {
   // it("adds a friend", function(){
   //   this.person.friends.push(friend);
 
-    expect(this.person.friends[friends.length - 1].toBe(friend);
+
