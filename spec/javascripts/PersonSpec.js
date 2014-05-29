@@ -6,5 +6,13 @@ describe("Person", function(){ // Describing the class we want to look at
       expect(person.firstName).toEqual("Jon");
       expect(person.lastName).toEqual("Doe");
     });
+    it("has a default age", function(){
+      var person = new Person("Jon", "Doe");
+      expect(person.age).toEqual(30);
+    });
+    it("accepts an age", function(){
+      var person = new Person("Jon", "Doe", 33);
+      expect(person.age).toEqual(33);
+    });
   });
 });
