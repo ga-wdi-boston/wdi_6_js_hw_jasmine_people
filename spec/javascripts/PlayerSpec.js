@@ -69,4 +69,12 @@ describe("Player", function() {
       expect(this.player.friends).toContain(buddy);
     });
   });
+
+  describe("#removeFriend", function(){
+    it("allows a person to remove a friend to their friends array", function(){
+      this.player.removeFriend("Tim Gravelle");
+
+      expect(this.player.friends).not.toContain(buddy);
+    });
+  });
 });

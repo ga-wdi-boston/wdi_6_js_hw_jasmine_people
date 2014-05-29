@@ -11,4 +11,11 @@ var Player = function(firstName, lastName, age, weight, height, friends) {
   this.addFriend = function(buddy){
     this.friends.push(buddy);
   };
+  this.removeFriend = function(nameToRemove){
+    for(var i = 0; i < this.friends.length; i++) {
+      if(this.friends[i].fullName === nameToRemove){
+        this.friends.splice(i, 1);
+      }
+    }
+  };
 };
