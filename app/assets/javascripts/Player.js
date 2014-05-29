@@ -18,4 +18,12 @@ var Player = function(firstName, lastName, age, weight, height, friends) {
       }
     }
   };
+  this.greetPeople = function(arrayOfPeople, message){
+    var people = arrayOfPeople || this.person.friends;
+    if(people.length === 0) {
+      throw new Error('You dont have any friends to greet!');
+    } else {
+      array.message;
+    }
+  };
 };
