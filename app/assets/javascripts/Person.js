@@ -8,8 +8,7 @@ var Person = function(firstName, lastName, age, weight, height, friends){
 };
 
 Person.prototype = {
-  fullName: function(){ return this.firstName + " " + this.lastName; }
-}
+  fullName: function(){ return this.firstName + " " + this.lastName; },
+  stoneWeight: function(){ return this.weight / 6.35; }
+};
 
-
-//6.35
