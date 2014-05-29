@@ -1,4 +1,4 @@
-function Person(firstName, lastName, age, weight, height) {
+function Person(firstName, lastName, age, weight, height, friends) {
   this.firstName = firstName;
   this.lastName = lastName;
     if (age === undefined){
@@ -20,5 +20,10 @@ function Person(firstName, lastName, age, weight, height) {
     else {
       this.height = height;
     }
-    this.friends = [];
+    if (friends === undefined){
+      this.friends = [];
+    }
+    else {
+      this.friends = friends;
+    }
 }

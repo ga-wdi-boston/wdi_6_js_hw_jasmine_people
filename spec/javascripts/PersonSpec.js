@@ -38,5 +38,11 @@ describe("Person", function(){ // Describing the class we want to look at
       var person = new Person();
       expect(person.friends).toEqual([]);
     });
+    it("accepts an array of friends(person objects)", function(){
+      var friend1 = new Person();
+      var friend2 = new Person();
+      var person = new Person("Jon", "Doe", 33, 64, 155, [friend1, friend2]);
+      expect(person.friends).toEqual([friend1, friend2]);
+    });
   });
 });
