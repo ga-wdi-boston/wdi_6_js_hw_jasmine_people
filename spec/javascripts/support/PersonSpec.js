@@ -2,38 +2,40 @@ describe("Person", function() {
 	
 	describe("intializer", function() {
 		it("accepts a first name and a last name and optional arguments", function (){
-			var person = new Person("Chuck", "Norris");
+			this.person = new Person("Chuck", "Norris");
 
-			expect(person.firstName).toEqual("Chuck");
-			expect(person.lastName).toEqual("Norris");
-			if (person.ageinYears !== undefined) {
-				expect(person.ageinYears).toEqual(30);
+			expect(this.person.firstName).toEqual("Chuck");
+			expect(this.person.lastName).toEqual("Norris");
+			if (this.person.ageinYears !== undefined) {
+				expect(this.person.ageinYears).toEqual(30);
 			}
 			else {
-				expect(person.ageinYears).toEqual(person.ageinYears);
+				expect(this.person.ageinYears).toEqual(this.person.ageinYears);
 			}
 			
-			if (person.weightinKilograms !== undefined) {
-				expect(person.weightinKilograms).toEqual(80);
+			if (this.person.weightinKilograms !== undefined) {
+				expect(this.person.weightinKilograms).toEqual(80);
 			}
 			else {
-				expect(person.weightinKilograms).toEqual(person.weightinKilograms);
+				expect(this.person.weightinKilograms).toEqual(this.person.weightinKilograms);
 			}
 
-			if (person.heightinCentimeters !== undefined) {
-				expect(person.heightinCentimeters).toEqual((Math.floor(Math.random() * 50) + 150));
+			if (this.person.heightinCentimeters !== undefined) {
+				expect(this.person.heightinCentimeters).toEqual((Math.floor(Math.random() * 50) + 150));
 			}
 			else {
-				expect(person.heightinCentimeters).toEqual(person.heightinCentimeters);
+				expect(this.person.heightinCentimeters).toEqual(this.person.heightinCentimeters);
 			}
 
-			if (person.friends !== undefined) {
-				expect(person.friends).toEqual([ ]);
+			if (this.person.friends !== undefined) {
+				expect(this.person.friends).toEqual([ ]);
 			}
 			else {
-				expect(person.friends).toEqual(person.friends);
+				expect(this.person.friends).toEqual(this.person.friends);
 			}
 
-			}); 
-		});
+		}); 
 	});
+});
+
+
