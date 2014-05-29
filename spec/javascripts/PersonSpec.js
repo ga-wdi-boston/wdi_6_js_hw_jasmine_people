@@ -38,5 +38,13 @@ describe("Person", function(){
       expect(this.person.friends).toContain(friend);
     });
   });
+
+  describe("#removeFriend", function(){
+    it("removes a friend from the array", function(){
+      this.person.removeFriend(friend);
+
+      expect(this.person.friends).not.toContain(friend);
+    });
+  });
 });
 
