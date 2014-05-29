@@ -30,4 +30,8 @@ function Person(firstName, lastName, age, weight, height, friends) {
 
 Person.prototype.fullName = function(){
   return this.firstName + ' ' + this.lastName;
-}
+};
+
+Person.prototype.weightInStone = function(){
+  return Math.round(this.weight / 14 * 100) / 100;
+};

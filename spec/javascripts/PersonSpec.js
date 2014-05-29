@@ -51,4 +51,10 @@ describe("Person", function(){ // Describing the class we want to look at
       expect(person.fullName()).toEqual("Jon Doe");
     });
   });
+  describe("#weightInStone", function(){
+    it("returns weight in stone", function() {
+      var person = new Person("Jon", "Doe", 33, 64);
+      expect(person.weightInStone()).toBeCloseTo(64/14, 2);
+    });
+  });
 });
