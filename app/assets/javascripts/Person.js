@@ -14,17 +14,3 @@ Person.prototype = {
   removeFriend: function(friend){ this.friends.splice(this.friends.indexOf(friend), 1); }
 };
 
-
-  // var friend = new Person("stevie", "dog");
-  // it("adds a friend", function(){
-  //   this.person.friends.push(friend);
-
-
-
-// var array = [2, 5, 9];
-// var index = ;
-
-
-// if (index > -1) {
-//     ;
-// }
