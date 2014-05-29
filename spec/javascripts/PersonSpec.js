@@ -1,6 +1,6 @@
 describe("Person", function(){
   beforeEach(function(){
-    this.person = new Person("George", "Straehle", 30, 80, 100, []);
+    this.person = new Person("George", "Straehle");
   });
 
   describe("initializer", function(){
@@ -10,7 +10,8 @@ describe("Person", function(){
     expect(this.person.lastName).toEqual("Straehle");
     expect(this.person.age).toEqual(30);
     expect(this.person.weight).toEqual(80);
-    expect(this.person.height).toBe(100);
+    expect(this.person.height).toBeGreaterThan(150);
+    expect(this.person.height).toBeLessThan(200);
     expect(this.person.friends.length).toEqual(0);
   });
 });
