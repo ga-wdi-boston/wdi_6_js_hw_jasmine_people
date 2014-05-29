@@ -18,5 +18,9 @@ describe("Person", function(){ // Describing the class we want to look at
       var person = new Person();
       expect(person.weight).toEqual(80);
     });
+    it("accepts a weight", function(){
+      var person = new Person("Jon", "Doe", 33, 64);
+      expect(person.weight).toEqual(64);
+    });
   });
 });
