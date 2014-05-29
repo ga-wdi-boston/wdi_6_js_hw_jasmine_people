@@ -2,6 +2,7 @@ describe("Player", function() {
 
   beforeEach(function(){
     this.player = new Player("Ethan", "Gould", 30);
+    buddy = new Player("Tim", "Gravelle");
   });
 
   describe("#firstName", function(){
@@ -58,6 +59,14 @@ describe("Player", function() {
     it("returns persons weight in stone", function(){
 
       expect(this.player.weightInStone(this.player.weight)).toBe(6);
+    });
+  });
+
+  describe("#addFriend", function(){
+    it("allows a person to add a friend to their friends array", function(){
+    this.player.addFriend(buddy);
+
+      expect(this.player.friends).toContain(buddy);
     });
   });
 });

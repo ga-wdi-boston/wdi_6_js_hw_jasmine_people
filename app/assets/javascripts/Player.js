@@ -7,4 +7,8 @@ var Player = function(firstName, lastName, age, weight, height, friends) {
   this.friends = [];
   this.fullName = function(firstName, lastName){ return firstName + ' ' + lastName;};
   this.weightInStone = function(weight){ return Math.round(weight / 14);};
+
+  this.addFriend = function(buddy){
+    this.friends.push(buddy);
+  };
 };
