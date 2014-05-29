@@ -1,10 +1,10 @@
 describe("Person", function(){
   beforeEach(function(){
-    this.person = new Person("George", "Straehle");
+    this.person = new Person("George", "Straehle", 30, 80, 100, []);
   });
 
   describe("initializer", function(){
-    it("initializes firstName", function(){
+    it("initializes firstName, lastName, age, weight, height, friends", function(){
 
     expect(this.person.firstName).toEqual("George");
     expect(this.person.lastName).toEqual("Straehle");
