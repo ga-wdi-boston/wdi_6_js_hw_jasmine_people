@@ -31,4 +31,12 @@ describe("Person", function(){
       expect(this.person.weight).toEqual(80);
     });
   });
+
+  describe("#fullName", function(){
+    it("returns the person's first name plus last name", function(){
+      this.person.fullName();
+
+      expect(this.person.fullName).toBe("Bob Loblaw");
+    });
+  });
 });
