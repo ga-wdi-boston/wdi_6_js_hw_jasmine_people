@@ -45,7 +45,7 @@ describe('Person', function() {
     it("adds a friend to friends array", function() {
       this.person.addFriend(mike);
 
-      expect(this.person.friends.length).toBe(1);
+      expect(this.person.friends).toEqual([mike]);
     });
   });
 
