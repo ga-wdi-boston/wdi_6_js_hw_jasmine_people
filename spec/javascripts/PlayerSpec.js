@@ -41,12 +41,12 @@ describe("Player", function() {
     });
   });
 
-  // describe("#friends", function(){
-  //   it("person has an array of friends", function(){
+  describe("#friends", function(){
+    it("person has an array of friends", function(){
 
-  //     expect(this.player.friends).toBeEmptyArray();
-  //   });
-  // });
+      expect(this.player.friends).toBeEmptyArray();
+    });
+  });
 
   describe("#fullName", function(){
     it("returns first and last name", function(){
@@ -75,6 +75,18 @@ describe("Player", function() {
       this.player.removeFriend("Tim Gravelle");
 
       expect(this.player.friends).not.toContain(buddy);
+    });
+  });
+
+  describe("#greetPeople", function(){
+    beforeEach(function(){
+      var arrayOfPeople = [new Player("jim", "bean"), new Player("kelly", "dean")];
+    });
+
+    it("allows a person to remove a friend to their friends array", function(){
+      this.player.greetPeople(arrayOfPeople, "hi");
+
+      expect(this.player.message).toContain('Hi');
     });
   });
 });
