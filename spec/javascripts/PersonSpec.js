@@ -3,8 +3,8 @@ describe("Person", function(){
     this.person = new Person("George", "Straehle");
   });
 
-  describe("initializer", function(){
-    it("initializes firstName, lastName, age, weight, height, friends", function(){
+describe("initializer", function(){
+  it("initializes firstName, lastName, age, weight, height, friends", function(){
 
     expect(this.person.firstName).toEqual("George");
     expect(this.person.lastName).toEqual("Straehle");
@@ -15,5 +15,13 @@ describe("Person", function(){
     expect(this.person.friends.length).toEqual(0);
   });
 });
+
+describe("#fullName", function(){
+  it("makes one expression out of firstName and lastName", function(){
+
+    expect(this.person.fullName()).toBe("George Straehle");
+  });
+});
+
 });
 
