@@ -23,5 +23,11 @@ describe("#fullName", function(){
   });
 });
 
+describe("#stoneWeight", function(){
+  it("give a weight in stone", function(){
+
+    expect(this.person.stoneWeight()).toBeCloseTo(12.6, 2);
+  });
+});
 });
 

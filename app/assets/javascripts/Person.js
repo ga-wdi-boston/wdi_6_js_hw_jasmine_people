@@ -10,3 +10,6 @@ var Person = function(firstName, lastName, age, weight, height, friends){
 Person.prototype = {
   fullName: function(){ return this.firstName + " " + this.lastName; }
 }
+
+
+//6.35
