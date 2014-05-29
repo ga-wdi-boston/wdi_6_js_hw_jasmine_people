@@ -1,4 +1,4 @@
-function Person(firstName, lastName, age, weight) {
+function Person(firstName, lastName, age, weight, height) {
   this.firstName = firstName;
   this.lastName = lastName;
     if (age === undefined){
@@ -14,5 +14,10 @@ function Person(firstName, lastName, age, weight) {
     else {
       this.weight = weight;
     }
-    this.height = Math.ceil(Math.random()*50 + 150);
+    if (height === undefined){
+      this.height = Math.ceil(Math.random()*50 + 150);
+    }
+    else {
+      this.height = height;
+    }
 }

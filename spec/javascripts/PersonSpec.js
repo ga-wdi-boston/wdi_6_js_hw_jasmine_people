@@ -30,5 +30,9 @@ describe("Person", function(){ // Describing the class we want to look at
       expect(person.height).not.toBeGreaterThan(200);
       expect(person.height).not.toBeUndefined();
     });
+    it("accepts a height", function(){
+      var person = new Person("Jon", "Doe", 33, 64, 155);
+      expect(person.height).toEqual(155);
+    });
   });
 });
