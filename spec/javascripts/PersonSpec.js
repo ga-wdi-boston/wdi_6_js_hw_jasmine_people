@@ -22,5 +22,13 @@ describe("Person", function(){ // Describing the class we want to look at
       var person = new Person("Jon", "Doe", 33, 64);
       expect(person.weight).toEqual(64);
     });
+    it("has a default height", function(){
+      var person = new Person();
+      // The default Height is a randomly generated number between
+      // 150 and 200.  This test ensures the number falls within that range.
+      expect(person.height).not.toBeLessThan(150);
+      expect(person.height).not.toBeGreaterThan(200);
+      expect(person.height).not.toBeUndefined();
+    });
   });
 });

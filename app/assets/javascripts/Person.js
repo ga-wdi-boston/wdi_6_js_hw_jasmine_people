@@ -14,4 +14,5 @@ function Person(firstName, lastName, age, weight) {
     else {
       this.weight = weight;
     }
+    this.height = Math.ceil(Math.random()*50 + 150);
 }
