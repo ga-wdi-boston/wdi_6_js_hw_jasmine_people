@@ -1,4 +1,3 @@
-/*var Person = function(firstName){
+var Person = function(firstName){
   this.firstName = firstName;
 };
-*/
