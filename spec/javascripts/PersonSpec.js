@@ -34,5 +34,9 @@ describe("Person", function(){ // Describing the class we want to look at
       var person = new Person("Jon", "Doe", 33, 64, 155);
       expect(person.height).toEqual(155);
     });
+    it("has a default empty array of friends", function(){
+      var person = new Person();
+      expect(person.friends).toEqual([]);
+    });
   });
 });

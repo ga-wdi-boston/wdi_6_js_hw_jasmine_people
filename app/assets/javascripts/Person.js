@@ -20,4 +20,5 @@ function Person(firstName, lastName, age, weight, height) {
     else {
       this.height = height;
     }
+    this.friends = [];
 }
