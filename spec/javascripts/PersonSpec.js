@@ -45,4 +45,10 @@ describe("Person", function(){ // Describing the class we want to look at
       expect(person.friends).toEqual([friend1, friend2]);
     });
   });
+  describe("#fullName", function(){
+    it("returns first plus last name", function() {
+      var person = new Person("Jon", "Doe");
+      expect(person.fullName()).toEqual("Jon Doe");
+    });
+  });
 });

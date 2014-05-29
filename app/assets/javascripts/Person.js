@@ -27,3 +27,7 @@ function Person(firstName, lastName, age, weight, height, friends) {
       this.friends = friends;
     }
 }
+
+Person.prototype.fullName = function(){
+  return this.firstName + ' ' + this.lastName;
+}
