@@ -7,4 +7,5 @@ function Person(firstName, lastName, age) {
     else {
       this.age = age;
     }
+  this.weight = 80;
 }
