@@ -10,14 +10,14 @@ describe('Person', function() {
     expect(this.person.weight).toBe(80);
     expect(this.person.height).toBeLessThan(201);
     expect(this.person.height).toBeGreaterThan(149);
-    expect(this.person.friends.length).toBe(0);
+    expect(this.person.friends).toEqual([]);
   });
 
 });
 
 describe('Person', function() {
   beforeEach(function() {
-    mike = this.person = new Person('Mike', 'Talley', 34, 86, 182, []);
+    mike = this.person = new Person('Mike', 'Talley', {age: 34, weight: 86, height: 182, friends: []});
   });
 
   it('accepts values as parameters', function() {
@@ -26,7 +26,7 @@ describe('Person', function() {
     expect(this.person.age).toBe(34);
     expect(this.person.weight).toBe(86);
     expect(this.person.height).toBe(182);
-    expect(this.person.friends.length).toBe(0);
+    expect(this.person.friends).toEqual([]);
   });
 
   describe("#fullName", function(){
@@ -53,22 +53,22 @@ describe('Person', function() {
     it("removes a selected friend from friends array", function() {
       this.person.removeFriend('Mike Talley');
 
-      expect(this.person.friends.length).toBe(0);
+      expect(this.person.friends).toEqual([]);
     });
   });
 });
 
 describe('Person', function() {
   beforeEach(function() {
-    mike = new Person('Mike', 'Talley', 34, 86, 182, []);
-    joe = new Person('Mike', 'Talley', 34, 86, 182, []);
-    bob = new Person('Mike', 'Talley', 34, 86, 182, [mike, joe]);
+    mike = new Person('Mike', 'Talley', {age: 34, weight: 86, height: 182, friends: []});
+    joe = new Person('Mike', 'Talley', {age: 34, weight: 86, height: 182, friends: []});
+    bob = new Person('Mike', 'Talley', {age: 34, weight: 86, height: 182, friends: [mike, joe]});
   });
 
   describe("#greetPeople", function(people){
     it("greets people", function() {
-      expect(mike.greetPeople([joe, bob])).toContain('Hi');
-      expect(bob.greetPeople()).toContain('Hi');
+      expect(mike.greetPeople([joe, bob])).toContain('Hi, ' + joe.fullName());
+      expect(bob.greetPeople()).toContain('Hi, ', mike.fullName());
       expect(function() {
         joe.greetPeople();
       }).toThrowError('No people/friends to greet!');
