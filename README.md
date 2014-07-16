@@ -19,9 +19,4 @@ I should also be able to call these functions on a `Person`:
 * `removeFriend` should take a name string and remove the person with that name from the person's friends, if there is such a friend
 * `greetPeople` should return a string that greets an optional array of `Person` objects (default to the person's friends) by their full names, with an optional greeting (default to `"Hi"`). If no people are provided and the person has no friends, the function should throw an error.
 
-## Grading
-
-* **(2)** Person initialization and default values working and tested
-* **(5)** One point for each of the specified functions working and tested
-* **(1)** Code has good style/naming and adheres to best practices
-* **(2)** Repository has clean, logical, single-task commits with descriptive messages
+Be sure to make clean single-task Git commits with descriptive messages!
