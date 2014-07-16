@@ -16,6 +16,15 @@ Person.prototype = {
   },
   addFriend: function(friend) {
     this.friends.push(friend);
+  },
+  removeFriend: function(friendName) {
+    this.friends.forEach(function(friend){
+      if (friend.firstName === friendName) {
+        this.friends.pop(friend);
+      } else {
+        return 'Friend not found.';
+      }
+    });
   }
 };
 
