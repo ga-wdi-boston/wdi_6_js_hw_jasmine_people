@@ -13,7 +13,11 @@ Person.prototype = {
   },
   weightInStone: function() {
     return (this.weight * 0.157473) + ' stone';
+  },
+  addFriend: function(friend) {
+    this.friends.push(friend);
   }
 };
 
 me = new Person('Max', 'Kohl', 25, 95, 188);
+chase = new Person('Chase', 'Bronstein', 29);
