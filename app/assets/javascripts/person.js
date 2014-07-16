@@ -10,8 +10,10 @@ var Person = function(firstName, lastName, age, weight, height, friends) {
 Person.prototype = {
   fullName: function() {
     return this.firstName + ' ' + this.lastName;
+  },
+  weightInStone: function() {
+    return (this.weight * 0.157473) + ' stone';
   }
 };
 
 me = new Person('Max', 'Kohl', 25, 95, 188);
-
