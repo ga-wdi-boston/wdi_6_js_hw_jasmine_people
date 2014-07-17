@@ -25,8 +25,18 @@ Person.prototype = {
         return 'Friend not found.';
       }
     });
+  },
+  greetPeople: function(people, greeting) {
+    var toGreet = people || this.friends;
+    var salutation = greeting || 'Hi ';
+    var greetString = '';
+    toGreet.forEach(function(person){
+      greetString = greetString + person.fullName() + ', ';
+    });
+    return salutation + greetString;
   }
 };
 
 me = new Person('Max', 'Kohl', 25, 95, 188);
 chase = new Person('Chase', 'Bronstein', 29);
+elise = new Person('Elise', 'Ramsay', 26);
