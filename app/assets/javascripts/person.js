@@ -16,21 +16,19 @@ Person.prototype.weightInStone = function(weight) {
 };
 
 Person.prototype.addFriend = function(friend) {
-  this.friends.push(friend);
-  return this.friends;
+  return this.friends.push(friend);
 };
 
 Person.prototype.removeFriend = function(friend) {
   for(var i = 0; i < this.friends.length; i++) {
     if(this.friends[i].firstName === friend)
-      this.friends.splice(this.friends[i]);
-    return this.friends;
+      return this.friends.splice(i, 1);
   }
 };
 
 Person.prototype.greetPeople = function(people, greeting) {
-  this.people = people || this.friends;
-  this.greeting = greeting || 'Hi';
+  people = people || this.friends;
+  greeting = greeting || 'Hi';
   var shoutout = this.greeting;
 
   this.people.forEach(function(person) {
